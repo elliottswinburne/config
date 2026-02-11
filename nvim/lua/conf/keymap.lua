@@ -27,6 +27,7 @@ keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
 keymap("n", "Q", "<nop>", opts)
+keymap("n", "<Esc>", ":noh<CR>", opts)
 
 -- keep selection after indent
 keymap("v", "<", "<gv", opts)

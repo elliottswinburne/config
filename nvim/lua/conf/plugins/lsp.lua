@@ -33,18 +33,21 @@ return {
       },
     })
 
-    -- Mason-lspconfig setup
     require("mason-lspconfig").setup({
       handlers = {
-        -- Default handler for automatically configuring installed servers
         function(server_name)
-          require("lspconfig")[server_name].setup({}) end,
+          require("lspconfig")[server_name].setup({})
+        end,
 
-        -- You can add custom handlers for specific servers here
-        -- For example:
-        -- tsserver = function(_, opts)
-        --   require("lspconfig").tsserver.setup(opts)
-        -- end,
+        -- Custom clangd setup
+        clangd = function()
+          require("lspconfig").clangd.setup({
+            cmd = {
+              "clangd",
+              "--query-driver=C:/mysys64/ucrt64/bin/gcc.exe",
+            },
+          })
+        end,
       },
     })
 

@@ -5,7 +5,7 @@ local options = {
 	completeopt = { "menuone", "noselect" },
 	conceallevel = 0,
 	fileencoding = "utf-8",
-	hlsearch = false,
+	hlsearch = true,
 	incsearch = true,
 	ignorecase = true,
 	ro = false,
@@ -33,7 +33,7 @@ local options = {
 	wrap = false,
 	scrolloff = 4,
 	sidescrolloff = 4,
-	guifont = "FiraCode_Nerd_Font:h14",
+	guifont = "GeistMono_Nerd_Font:h14",
 }
 
 for k, v in pairs(options) do
@@ -53,6 +53,6 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 vim.cmd("autocmd BufEnter * set formatoptions-=cro")
-vim.cmd("autocmd BufEnter * setlocal formatoptions-=cro")                                                  
+vim.cmd("autocmd BufEnter * setlocal formatoptions-=cro") 
 
 vim.opt.shortmess:append "c"
